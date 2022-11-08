@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Admin All Route
+Route::controller(\App\Http\Controllers\AdminController::class)->group(function () {
+    Route::get('/admin/logout', 'destroy')->name('admin.logout');
+});
 
 Route::get('/dashboard', function () {
     return view('admin.index');
