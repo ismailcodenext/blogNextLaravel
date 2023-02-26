@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 // Admin All Route
 Route::controller(\App\Http\Controllers\AdminController::class)->group(function () {
