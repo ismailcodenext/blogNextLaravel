@@ -26,6 +26,20 @@ Route::controller(\App\Http\Controllers\AdminController::class)->group(function 
     Route::post('/update/password', 'UpdatePassword')->name('update.password');
 });
 
+// Home Slide All Route
+Route::controller(\App\Http\Controllers\Home\HomeSliderController::class)->group(function () {
+    Route::get('/home/slide', 'HomeSlider')->name('home.slide');
+    Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
+    
+});
+
+// About Page All Route
+Route::controller(\App\Http\Controllers\Home\AboutController::class)->group(function () {
+    Route::get('/home/about', 'AboutPage')->name('home.about');
+    
+    
+});
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
